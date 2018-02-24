@@ -17,7 +17,7 @@ Now, thanks that the license of the original resource is under AGPL 3, I'm able 
 
 # LICENSE
 ```
-FiveM Scripts
+ESX NoCarJack
 Copyright (C) 2018  AxDSan
 
 This program is free software: you can redistribute it and/or modify
