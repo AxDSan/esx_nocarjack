@@ -11,8 +11,9 @@ Huuuugee... Maaaassiveee thanks to Sighmir @ https://github.com/Sighmir for bein
 Now, thanks that the license of the original resource is under AGPL 3, I'm able to modify and redistribute the original resource, provided that I release this under the same license, state changes and provide the source code; So I will try to comply with everything as possible so this resource stays up and alive for everyone (at least in the ESX realm xD, as vRP people got their thing alrdy >:D ) to enjoy :D
 
 # Source Code Changes
-- Changed everything related to vRP (of course)
+- Removed/Changed everything related to vRP (of course) (@Sighmir, althought these changes are easily identifiable if you need more details, just lmk)
 - [Changed the way I get the vehicle data](https://github.com/AxDSan/esx_nocarjack/blob/master/server/nocarjack_sv.lua#L7)
+- Changed the way I call core functions [1]( functions(https://github.com/AxDSan/esx_nocarjack/blob/86f1e484ecd7e9da36d973bb867a934802f04e52/server/nocarjack_sv.lua#L51) [2](https://github.com/AxDSan/esx_nocarjack/blob/86f1e484ecd7e9da36d973bb867a934802f04e52/server/nocarjack_sv.lua#L38) [3](https://github.com/AxDSan/esx_nocarjack/blob/86f1e484ecd7e9da36d973bb867a934802f04e52/client/nocarjack_cl.lua#L61) [4](https://github.com/AxDSan/esx_nocarjack/blob/86f1e484ecd7e9da36d973bb867a934802f04e52/client/nocarjack_cl.lua#L63) [5](https://github.com/AxDSan/esx_nocarjack/blob/86f1e484ecd7e9da36d973bb867a934802f04e52/client/nocarjack_cl.lua#L71)
 
 # LICENSE
 ```
