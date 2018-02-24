@@ -11,6 +11,7 @@ Huuuugee... Maaaassiveee thanks to Sighmir @ https://github.com/Sighmir for bein
 Now, thanks that the license of the original resource is under AGPL 3, I'm able to modify and redistribute the original resource, provided that I release this under the same license, state changes and provide the source code; So I will try to comply with everything as possible so this resource stays up and alive for everyone (in ESX realm, as VRP got their thing alrdy >:D ) to enjoy :D
 
 # LICENSE
+```
 FiveM Scripts
 Copyright (C) 2018  Sighmir
 
@@ -26,3 +27,4 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+```
