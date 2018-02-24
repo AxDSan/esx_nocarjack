@@ -13,7 +13,7 @@ Now, thanks that the license of the original resource is under AGPL 3, I'm able 
 # LICENSE
 ```
 FiveM Scripts
-Copyright (C) 2018  Sighmir
+Copyright (C) 2018  AxDSan
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published
