@@ -39,19 +39,16 @@ RegisterNetEvent("esx_nocarjack:setVehicleDoorsForEveryone")
 AddEventHandler("esx_nocarjack:setVehicleDoorsForEveryone", function(veh, doors, plate)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
-    local vehicle = veh[1]
-    local veh_doors = veh[2]
-    local veh_plate = veh[3]
 
-    if not vehicles[veh_plate] then
-        getVehData(veh_plate, function(veh_data)
-            if veh_data.owner == nil then
+    if not vehicles[plate] then
+        getVehData(plate, function(veh_data)
+            if veh_data.owner ~= xPlayer.name then
                 local players = GetPlayers()
-                for _,v in pairs(players) do
-                    TriggerClientEvent("esx_nocarjack:setVehicleDoors", v, table.unpack(veh, doors))
+                for _,player in pairs(players) do
+                    TriggerClientEvent("esx_nocarjack:setVehicleDoors", player, veh, doors)
                 end
             end
         end)
-        vehicles[veh_plate] = true
+        vehicles[plate] = true
     end
 end)

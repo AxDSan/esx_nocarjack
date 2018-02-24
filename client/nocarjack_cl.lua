@@ -58,9 +58,9 @@ Citizen.CreateThread(function()
 				-- lock doors if not lucky or blacklisted
 				if (lock == 7 or pedd) then
 					if not lucky or blacklisted then
-						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', {veh, 2, plate})
+						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', table.unpack(veh, 2, plate))
 					else
-						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', {veh, 1, plate})
+						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', table.unpack(veh, 1, plate))
 					end
 				end
 			end
