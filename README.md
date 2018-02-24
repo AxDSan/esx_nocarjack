@@ -3,7 +3,7 @@ It's finally here! something I was hoping for a long time, I couldn't take it no
 no one working on this, so I took matters in my own hands and started working for the implementation
 for ESX.
 
-This resource will prevent anyone from hijacking or carjacking any car, NPC or not.
+This resource will prevent anyone from easily hijacking or carjacking any car, NPC or not.
 
 # Credits & License Disclaimer
 Huuuugee... Maaaassiveee thanks to Sighmir @ https://github.com/Sighmir for being the original developer of the vRP version of this script.
