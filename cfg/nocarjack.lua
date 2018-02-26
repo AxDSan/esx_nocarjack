@@ -20,3 +20,8 @@ cfg.blacklist = { -- vehicles that will always be locked when spawned naturally
   "police7",
   "RHINO"
 }
+
+cfg.job_whitelist = {
+  "police",
+  "EMS"
+}

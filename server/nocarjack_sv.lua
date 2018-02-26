@@ -19,6 +19,7 @@ function getVehData(plate, callback)
             MySQL.Async.fetchAll("SELECT * FROM `users` WHERE `identifier` = @identifier", {['@identifier'] = foundIdentifier},
             function(result)
                 local ownerName = result[1].firstname .. " " .. result[1].lastname
+
                 local info = {
                     plate = plate,
                     owner = ownerName
@@ -39,16 +40,19 @@ RegisterNetEvent("esx_nocarjack:setVehicleDoorsForEveryone")
 AddEventHandler("esx_nocarjack:setVehicleDoorsForEveryone", function(veh, doors, plate)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
+    local veh_model = veh[1]
+    local veh_doors = veh[2]
+    local veh_plate = veh[3]
 
-    if not vehicles[plate] then
-        getVehData(plate, function(veh_data)
-            if veh_data.owner ~= xPlayer.name then
+    if not vehicles[veh_plate] then
+        getVehData(veh_plate, function(veh_data)
+            if veh_data.plate ~= plate then
                 local players = GetPlayers()
                 for _,player in pairs(players) do
-                    TriggerClientEvent("esx_nocarjack:setVehicleDoors", player, veh, doors)
+                    TriggerClientEvent("esx_nocarjack:setVehicleDoors", player, table.unpack(veh, doors))
                 end
             end
         end)
-        vehicles[plate] = true
+        vehicles[veh_plate] = true
     end
 end)

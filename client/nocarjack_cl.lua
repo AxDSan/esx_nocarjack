@@ -8,24 +8,33 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-	PlayerData = xPlayer
-end)
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
 
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job)
-  PlayerData.job = job
-end)
+    return false
+end
+
+function isPlayerJobPolice()
+	for k,v in pairs(ESX.GetPlayerData()) do
+		for k,v in pairs(k) do
+			print(v)
+		end
+	end
+end
 
 Citizen.CreateThread(function()
 	while true do
-			-- gets if player is entering vehicle
-			if DoesEntityExist(GetVehiclePedIsTryingToEnter(PlayerPedId())) then
-				-- gets vehicle player is trying to enter and its lock status
-				local veh = GetVehiclePedIsTryingToEnter(PlayerPedId())
-				local lock = GetVehicleDoorLockStatus(veh)
-
+		-- gets if player is entering vehicle
+		if DoesEntityExist(GetVehiclePedIsTryingToEnter(PlayerPedId())) then
+			-- gets vehicle player is trying to enter and its lock status
+			local xPlayer = ESX.GetPlayerData()
+			local veh = GetVehiclePedIsTryingToEnter(PlayerPedId())
+			local lock = GetVehicleDoorLockStatus(veh)
+				
 				-- Get the conductor door angle, open if value > 0.0
 				local doorAngle = GetVehicleDoorAngleRatio(veh, 0)
 			
@@ -57,10 +66,14 @@ Citizen.CreateThread(function()
 				local plate = GetVehicleNumberPlateText(veh)
 				-- lock doors if not lucky or blacklisted
 				if (lock == 7 or pedd) then
-					if not lucky or blacklisted then
-						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', table.unpack(veh, 2, plate))
+					if has_value(cfg.job_whitelist, xPlayer.job.name) then
+						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', {veh, 1, plate})
 					else
-						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', table.unpack(veh, 1, plate))
+						if not lucky or blacklisted then
+							TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', {veh, 2, plate})
+						else
+							TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', {veh, 1, plate})
+						end
 					end
 				end
 			end
