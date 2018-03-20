@@ -1,3 +1,6 @@
+___
+### Notice: Further development/support has stopped, if you have a problem, your best shot is to fork the resource, and work on your own, provided that you release your modified resource under the same license, and state the changes, just as the license requires.
+___
 # ESX NoCarJack
 It's finally here! something I was hoping for a long time, I couldn't take it no more after seeing
 no one working on this, so I took matters in my own hands and started working for the implementation
