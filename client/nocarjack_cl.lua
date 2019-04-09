@@ -54,7 +54,7 @@ Citizen.CreateThread(function()
 				end
 			
 				-- check if vehicle is in blacklist
-				local backlisted = false
+				local blacklisted = false
 				for k,model in pairs(cfg.blacklist) do
 					if IsVehicleModel(veh, GetHashKey(model)) then
 						blacklisted = true
