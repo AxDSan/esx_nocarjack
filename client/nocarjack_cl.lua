@@ -65,7 +65,7 @@ Citizen.CreateThread(function()
 				local pedd = GetPedInVehicleSeat(veh, -1)
 				local plate = GetVehicleNumberPlateText(veh)
 				-- lock doors if not lucky or blacklisted
-				if (lock == 7 or pedd) then
+				if ((lock == 7) or (pedd ~= 0 )) then
 					if has_value(cfg.job_whitelist, xPlayer.job.name) then
 						TriggerServerEvent('esx_nocarjack:setVehicleDoorsForEveryone', {veh, 1, plate})
 					else
